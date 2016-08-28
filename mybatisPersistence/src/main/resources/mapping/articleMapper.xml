@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhong.inter.IArticleOperation">
+    
+    <resultMap type="com.zhong.pojo.Article" id="resultListArticle">
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="price" property="price" />
+    </resultMap>
+    
+    <insert id="add" parameterType="com.zhong.pojo.User" useGeneratedKeys="true" keyProperty="id"> 
+        insert into articles(id,userId,title,content,price) values(#{id},#{userId},#{title},#{content},#{price})  
+    </insert>
+    <delete id="deleteById" parameterType="string">
+        delete from articles where id=#{id}
+    </delete>
+    <update id="update" parameterType="com.zhong.pojo.Article" >
+        update articles set userId=#{userId},title=#{title},content=#{content},price=#{price} where id=#{id}
+    </update>
+    <select id="queryById" parameterType="string" resultType="com.zhong.pojo.Article">
+        select * from articles where id = #{id}
+    </select>
+    <select id="queryByUserId" parameterType="string" resultMap="resultListArticle">
+        select * from articles where userId = #{userId}
+    </select>
+</mapper>
