@@ -1,38 +1,46 @@
 package com.zhong.pojo;
 
 public class User {
+    private Integer id;
 
-	private String id;
-	private String name;
-	private int age;
+    private String userName;
 
-	public String getId() {
-		return id;
-	}
+    private String password;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    private Integer age;
 
-	public String getName() {
-		return name;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    
+    
+    
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	@Override
-	public String toString() {
-		return String.format("User [id=%s, name=%s, age=%s]", id, name, age);
-	}
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
