@@ -31,6 +31,7 @@ public class TestMybatis {
 	  
 	    @Test  
 	    public void test1() throws Exception {  
+	        System.out.println("hello");
 	        User user = userService.getUserById(1);
 	        System.out.println("--->" + user.getAge());
 	        System.out.println(logger.isDebugEnabled());
